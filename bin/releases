@@ -4,3 +4,61 @@
 /**
  * Creates a new release based on the current dist
  */
+$lasted = null;
+
+foreach (glob(__DIR__ . "/../releases/*", GLOB_ONLYDIR) as $version) {
+
+	$version = array_reverse(explode('.', $versionString = basename($version)));	
+	$versionWeight = 0;
+
+	foreach ($version as $key => $v) {
+		$key += 1;
+		$multi = (int)('1' . str_repeat('0', $key));
+		$versionWeight += $v * $multi;
+	}
+
+	if ($versionWeight > $lasted) {
+		$lasted = $versionString;
+	}
+}
+
+// generate the next version name
+$lasted = substr($lasted, 0, strrpos($lasted, '.')) . '.' . (((int) substr($lasted, strrpos($lasted, '.') + 1)) + 1);
+
+if ($lasted === '.1') {
+	$lasted = '1.0.0';
+}
+
+// copy data
+copy_directory(__DIR__ . "/../dist/assets/", __DIR__ . "/../releases/" . $lasted . '/');
+
+$lasted = __DIR__ . "/../releases/lasted/";
+
+// kill the lasted directory
+system("rm -rf " . escapeshellarg($lasted));
+
+// copy to lasted
+copy_directory(__DIR__ . "/../dist/assets/", $lasted);
+
+/**
+ * Copy an entire directory 
+ * Taken from the php manual comment
+ * 
+ * @param stirng 			$src
+ * @param string 			$dst
+ */
+function copy_directory($src, $dst)
+{
+    $dir = opendir($src);
+    @mkdir($dst);
+    while (false !== ($file = readdir($dir))) {
+        if (($file != '.') && ($file != '..')) {
+            if (is_dir($src . '/' . $file)) {
+                copy_directory($src . '/' . $file, $dst . '/' . $file);
+            } else {
+                copy($src . '/' . $file, $dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
+}
