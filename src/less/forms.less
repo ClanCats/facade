@@ -1,0 +1,21 @@
+@input-border-focus: #66afe9;
+
+.form-control-focus(@color: @input-border-focus) {
+	@color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+		
+	&:focus {
+		border-color: @color;
+		outline: 0;
+		.box-shadow(none);
+	}
+}
+
+.form-control {
+	.box-shadow(none);
+	font-weight: @btn-font-weight;
+	border-width: 2px;
+}
+
+label {
+	font-weight: @default-font-weight;
+}

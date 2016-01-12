@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Creates a new release based on the current dist
+ */

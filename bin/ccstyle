@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Helper script to handle clancats style skeletons
+ */
