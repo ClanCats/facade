@@ -1,5 +1,5 @@
 body {
-	font-weight: 300;
+	font-weight: @default-font-weight;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,10 +9,17 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
 	margin: 0 0 20px;
+	color: #555;
+}
+
+strong, b {
+	font-weight: @strong-font-weight;
 }
 
 a {
-
+	&.editorial-link {
+		font-weight: @strong-font-weight;
+	}
 }
 
 footer {

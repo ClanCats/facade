@@ -32,6 +32,8 @@ if ($lasted === '.1') {
 // copy data
 copy_directory(__DIR__ . "/../dist/assets/", __DIR__ . "/../releases/" . $lasted . '/');
 
+echo "Created new release: " . $lasted . PHP_EOL;
+
 $lasted = __DIR__ . "/../releases/lasted/";
 
 // kill the lasted directory

@@ -1,0 +1,29 @@
+.callout {
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 4px;
+	border-left-width: 5px;
+	border-left-color: #fff;
+	border-left-style: solid;
+	margin-bottom: 20px;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	&.callout-note {
+		border-left-color: @brand-info;
+	}
+
+	&.callout-success {
+		border-left-color: @brand-success;
+	}
+
+	&.callout-warning {
+		border-left-color: @brand-warning;
+	}
+
+	&.callout-danger {
+		border-left-color: @brand-danger;
+	}
+}
