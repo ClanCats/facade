@@ -6830,6 +6830,68 @@ fieldset[disabled] .btn-dark.focus {
 .btn-dark:hover {
   color: #333;
 }
+.btn.btn-white {
+  color: #ddd;
+  background-color: transparent;
+  border-color: #ddd;
+}
+.btn.btn-white:focus,
+.btn.btn-white.focus {
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9d9d9d;
+}
+.btn.btn-white:hover {
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #bebebe;
+}
+.btn.btn-white:active,
+.btn.btn-white.active,
+.open > .dropdown-toggle.btn.btn-white {
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #bebebe;
+}
+.btn.btn-white:active:hover,
+.btn.btn-white.active:hover,
+.open > .dropdown-toggle.btn.btn-white:hover,
+.btn.btn-white:active:focus,
+.btn.btn-white.active:focus,
+.open > .dropdown-toggle.btn.btn-white:focus,
+.btn.btn-white:active.focus,
+.btn.btn-white.active.focus,
+.open > .dropdown-toggle.btn.btn-white.focus {
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9d9d9d;
+}
+.btn.btn-white:active,
+.btn.btn-white.active,
+.open > .dropdown-toggle.btn.btn-white {
+  background-image: none;
+}
+.btn.btn-white.disabled:hover,
+.btn.btn-white[disabled]:hover,
+fieldset[disabled] .btn.btn-white:hover,
+.btn.btn-white.disabled:focus,
+.btn.btn-white[disabled]:focus,
+fieldset[disabled] .btn.btn-white:focus,
+.btn.btn-white.disabled.focus,
+.btn.btn-white[disabled].focus,
+fieldset[disabled] .btn.btn-white.focus {
+  background-color: transparent;
+  border-color: #ddd;
+}
+.btn.btn-white .badge {
+  color: transparent;
+  background-color: #ddd;
+}
+.btn.btn-white:hover {
+  background: #fff;
+  border-color: #fff;
+  color: rgba(0, 0, 0, 0.9);
+}
 .btn-primary:hover {
   color: #3b92d4;
   border-color: #3b92d4;

@@ -7,6 +7,16 @@
 	}
 }
 
+.btn.btn-white {
+	.button-variant(@btn-white-color; @btn-white-bg; @btn-white-border);
+
+	&:hover {
+		background: #fff;
+		border-color: #fff;
+		color: rgba(0, 0, 0, .9);
+	}
+}
+
 .btn-primary {
 	&:hover {
 		color: @btn-primary-border;
